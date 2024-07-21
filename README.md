@@ -67,3 +67,5 @@ Add the accelerate extension
 ```
 npm install @prisma/extension-accelerate
 ```
+
+after this you have to write routes logic and sent them with jwt authentication

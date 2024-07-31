@@ -19,7 +19,7 @@ export const Auth = ({type} : {type: "signup" | "signin"}) => {
     const response = await axios.post(`${BACKEND_URL}/api/v1/user/${type === "signup" ? "signup" : "signin"}`,postInputs)
     const jwt = response.data;
     localStorage.setItem("token",jwt);
-    navigate("/blog");
+    navigate("/blogs");
    } catch(e) {
     
    }
@@ -31,9 +31,9 @@ export const Auth = ({type} : {type: "signup" | "signin"}) => {
       <div>
       <div className="px-10">
         <div className="text-3xl font-extrabold">
-          Create an account
+          {type === "signin" ? "Log In to Your Account" : "Create An Account"}
         </div>
-        <div className="text-slate-400">
+        <div className="text-slate-400 text-center mt-2">
           {type === "signin" ? "Don't have an account?" : "Already have an account?" }
           <Link className="pl-2 underline" to={type === "signin" ? "/signup" : "/signin"}>
           {type === "signin" ? "Sign up" : "Login"}</Link>

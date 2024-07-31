@@ -46,13 +46,13 @@ export const Auth = ({type} : {type: "signup" | "signin"}) => {
               name: e.target.value
             })
           }} /> : null}
-           <LabelledInputBox label="Username" placeholder="Johndoe@gmail.com" onChange={(e) => {
+           <LabelledInputBox label="Username (email)" placeholder="Johndoe@gmail.com" onChange={(e) => {
             setPostInputs({
               ...postInputs,
               email: e.target.value
             })
           }} />
-           <LabelledInputBox label="Password" type={"password"} placeholder="John doe...." onChange={(e) => {
+           <LabelledInputBox label="Password (min 6 characters)" type={"password"} placeholder="John doe...." onChange={(e) => {
             setPostInputs({
               ...postInputs,
               password: e.target.value

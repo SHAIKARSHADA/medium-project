@@ -34,9 +34,7 @@ userRouter.post("/signup", async (c) => {
       },
     });
     const token = await sign({ id: user.id }, c.env.SECRET_URL);
-    return c.json({
-      token: token,
-    });
+    return c.text(token);
   } catch (e) {
     return c.text("User name already exists");
   }
@@ -72,7 +70,5 @@ userRouter.post("/signin", async (c) => {
 
   const token = await sign({ id: user.id }, c.env.SECRET_URL);
 
-  return c.json({
-    token: token,
-  });
+  return c.text(token);
 });

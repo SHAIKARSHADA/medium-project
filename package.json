@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@shaik555/medium1": "^1.0.7",
+    "react-router-dom": "^6.25.1"
+  }
+}

@@ -71,7 +71,9 @@ blogRouter.post("/", async (c) => {
     },
   });
 
-  return c.json(response.id);
+  return c.json({
+    id: response.id
+  });
 });
 
 // This route is working properly

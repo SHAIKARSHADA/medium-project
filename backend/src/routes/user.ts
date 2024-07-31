@@ -30,13 +30,16 @@ userRouter.post("/signup", async (c) => {
     const user = await prisma.user.create({
       data: {
         email: body.email,
+        name: body.name,
         password: body.password,
       },
     });
     const token = await sign({ id: user.id }, c.env.SECRET_URL);
     return c.text(token);
+
   } catch (e) {
     return c.text("User name already exists");
+    
   }
 });
 
